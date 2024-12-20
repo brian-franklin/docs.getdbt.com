@@ -173,19 +173,36 @@ To use native private packages, you must have one of the following Git providers
 
 #### Configuration
 
-Use the `private` key in your `packages.yml` or `dependencies.yml` to clone package repos using your existing dbt Cloud Git integration without having to provision an access token or create a dbt Cloud environment variable:
+Use the `private` key in your `packages.yml` or `dependencies.yml` to clone package repos using your existing dbt Cloud Git integration without having to provision an access token or create a dbt Cloud environment variable. 
+
+The private key supports a two path layer: `org/repo` and dbt inherites the project path from your source repository.
 
 <File name="packages.yml">
 
 ```yaml
 packages:
-  - private: dbt-labs/awesome_repo
+  - private: dbt-labs/awesome_repo # your-org/your-repo path
   - package: normal packages
-
-	[...]
+  [...]
 ```
 
+:::tip
+Normally ADO repos use the `org_name/project_name/repo_name` path. However, you can only use the `org/repo` path to configrue private packages. If the package repository in ADO is within the same project as your source repository, then specify `org/repo` in the `private` key. If the package repository _isn't_ within the same project as your source repository, then the private packages feature won't currently work:
+
+<File name="packages.yml">
+
+```yaml
+packages:
+  - private: my-org/my-repo # Works if your source repo and package repo are in the same project
+```
 </File>
+:::
+
+For Azure DevOps repositories, you can only specify the `org/repo` path. The project tier is inherited from the source repository currently integrated with dbt Cloud.
+
+- If the package repository is within the same project as your source repository, you’re in the clear. Simply specify org/repo in the private block.
+- If the package repository is not within the same project as your source repository, this feature will not work for you until a future update.
+- This currently only works within a single Azure DevOps project. If your repositories are in different projects within the same organization, you can't reference them in the `private` key at this time.
 
 You can pin private packages similar to regular dbt packages:
 
