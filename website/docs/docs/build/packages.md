@@ -188,7 +188,9 @@ packages:
 </File>
 
 :::tip Azure DevOps repositories
-Normally ADO repos use the `org_name/project_name/repo_name` path. However, private package supports only the `org/repo` path. If the ADO package repository is within the same project as your source repository, you can specify `org/repo` in the `private` key. If the package repository _isn't_ within the same project as your source repository, then the private packages feature won't currently work:
+Currently, the private package feature only works when the ADO package repository is within the same project as your source repository. Normally ADO repos use the `org_name/project_name/repo_name` path. However, private package supports only the `org/repo` path. 
+
+You can use private packages by specifying `org/repo` in the `private` key:
 
 <File name="packages.yml">
 
