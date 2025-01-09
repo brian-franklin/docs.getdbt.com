@@ -299,8 +299,8 @@ If you believe your project might be affected, read more details in the migratio
 
 #### Testing your changes before upgrading
 Once you know what code changes you'll need to make, you can start implementing them. We recommend you:
-- Create a separate dbt project, **Upgrade project**, to test your changes before making them live in your main dbt project.
-- In your **Upgrade project**, connect to the same repository you use for your production project.
+- Create a separate dbt project, "Upgrade project", to test your changes before making them live in your main dbt project.
+- In your "Upgrade project", connect to the same repository you use for your production project.
 - Set the development environment [settings](/docs/dbt-versions/upgrade-dbt-version-in-cloud) to run the latest version of dbt Core.
 - Check out a branch `dbt-version-upgrade`, make the appropriate updates to your project, and verify your dbt project compiles and runs with the new version in the dbt Cloud IDE.
   - If upgrading directly to the latest version results in too many issues, try testing your project iteratively on successive minor versions. There are years of development and a few breaking changes between distant versions of dbt Core (for example, 0.14 --> 1.0). The likelihood of experiencing problems upgrading between successive minor versions is much lower, which is why upgrading regularly is recommended.
