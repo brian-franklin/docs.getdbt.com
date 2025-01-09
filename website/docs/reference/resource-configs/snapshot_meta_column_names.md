@@ -67,7 +67,7 @@ In order to align with an organization's naming conventions, the `snapshot_meta_
 
 By default, dbt snapshots use the following column names to track change history using [Type 2 slowly changing dimension](https://en.wikipedia.org/wiki/Slowly_changing_dimension#Type_2:_add_new_row) records:
 
-| Field          | <div style={{width:'250px'}}>Meaning</div> | Notes | [Example](#example) |
+| Field          | <div style={{width:'250px'}}>Meaning</div> | Notes | Example |
 | -------------- | ------- | ----- | ------- |
 | `dbt_valid_from` | The timestamp when this snapshot row was first inserted and became valid. | The value is affected by the [`strategy`](/reference/resource-configs/strategy). | `snapshot_meta_column_names: {dbt_valid_from: start_date}` |
 | `dbt_valid_to`   | The timestamp when this row is no longer valid. |  | `snapshot_meta_column_names: {dbt_valid_to: end_date}` |
