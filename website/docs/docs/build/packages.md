@@ -168,15 +168,14 @@ dbt Cloud supports private packages from [supported](#prerequisites) Git repos l
 - To use native private packages, you must have one of the following Git providers configured in the **Integrations** section of your **Account settings**:
   - [GitHub](/docs/cloud/git/connect-github)
   - [Azure DevOps](/docs/cloud/git/connect-azure-devops)
-    - For Azure DevOps, use the `org/repo` path (not the `org_name/project_name/repo_name` path) with the project tier inherited from the integrated source repository.
     - Private packages only work within a single Azure DevOps project. If your repositories are in different projects within the same organization, you can't reference them in the `private` key at this time.
+    - For Azure DevOps, use the `org/repo` path (not the `org_name/project_name/repo_name` path) with the project tier inherited from the integrated source repository.
   - Support for GitLab is coming soon.
 
 #### Configuration
 
 Use the `private` key in your `packages.yml` or `dependencies.yml` to clone package repos using your existing dbt Cloud Git integration without having to provision an access token or create a dbt Cloud environment variable. 
 
-The private key supports a two-layered-path: `org/repo`. dbt inherits the project path from your source repository.
 
 <File name="packages.yml">
 
