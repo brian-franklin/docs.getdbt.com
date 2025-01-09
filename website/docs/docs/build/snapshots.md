@@ -495,7 +495,7 @@ All of these column names can be customized using the `snapshot_meta_column_name
 
 - For the `check` strategy, the current timestamp is used to populate each column. If configured, the `check` strategy uses the `updated_at` column instead, as with the timestamp strategy.
 
-  <Expandable alt_header="Details for the check strategy">
+  <Expandable alt_header="Sample results for the check strategy">
 
   Snapshot query results at `2024-01-01 11:00`
 
