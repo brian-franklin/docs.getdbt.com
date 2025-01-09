@@ -451,7 +451,7 @@ In dbt Core v1.9+ (or available sooner in [the "Latest" release track in dbt Clo
 
 All of these column names can be customized using the `snapshot_meta_column_names` config. Refer to this [example](/reference/resource-configs/snapshot_meta_column_names#example) for more details.
 
-The timestamps used for each column are subtly different depending on the strategy you use:
+*The timestamps used for each column are subtly different depending on the strategy you use:
 
 - For the `timestamp` strategy, the configured `updated_at` column is used to populate the `dbt_valid_from`, `dbt_valid_to` and `dbt_updated_at` columns.
 
