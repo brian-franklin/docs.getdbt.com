@@ -455,7 +455,7 @@ All of these column names can be customized using the `snapshot_meta_column_name
 
 - For the `timestamp` strategy, the configured `updated_at` column is used to populate the `dbt_valid_from`, `dbt_valid_to` and `dbt_updated_at` columns.
 
-  <Expandable alt_header="Details for the timestamp strategy">
+  <Expandable alt_header="Sample results for the timestamp strategy">
 
   Snapshot query results at `2024-01-01 11:00`
 
