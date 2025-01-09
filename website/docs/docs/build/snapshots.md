@@ -449,7 +449,7 @@ In dbt Core v1.9+ (or available sooner in [the "Latest" release track in dbt Clo
 | `dbt_updated_at` | The `updated_at` timestamp of the source record when this snapshot row was inserted. | This is used internally by dbt. | `snapshot_meta_column_names: {dbt_updated_at: modified_date}` |
 | `dbt_is_deleted` | A string value indicating if the record has been deleted. (`True` if deleted, `False` if not deleted). |Added when `hard_deletes='new_record'` is configured.  | `snapshot_meta_column_names: {dbt_is_deleted: is_deleted}` |
 
-All of these column names can be customized using the `snapshot_meta_column_names` config. Refer to the [Example](/reference/resource-configs/snapshot_meta_column_names#example) for more details.
+All of these column names can be customized using the `snapshot_meta_column_names` config. Refer to this [example](/reference/resource-configs/snapshot_meta_column_names#example) for more details.
 
 The timestamps used for each column are subtly different depending on the strategy you use:
 
