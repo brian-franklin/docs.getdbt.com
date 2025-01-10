@@ -134,7 +134,9 @@ You can override this behavior by:
 
 Within this macro definition, you can reference whatever custom macros you want, based on static inputs from the configuration. At simplest, this enables you to DRY up code that you'd otherwise need to repeat across many different `.yml` files. Because the `get_where_subquery` macro is resolved at runtime, your custom macros can also include [fetching the results of introspective database queries](https://docs.getdbt.com/reference/dbt-jinja-functions/run_query).
 
-**Example:** Filter your test to the past N days of data, using dbt's cross-platform [`dateadd()`](https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros#dateadd) utility macro. You control how many days ago by setting the number in the placeholder string.
+#### Example 
+
+Filter your test to the past N days of data, using dbt's cross-platform [`dateadd()`](/reference/dbt-jinja-functions/cross-database-macros#dateadd) utility macro. You can set the number of days in the placeholder string.
 
 <File name='models/config.yml'>
 
